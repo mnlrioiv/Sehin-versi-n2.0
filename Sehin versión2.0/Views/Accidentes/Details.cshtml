@@ -1,0 +1,50 @@
+﻿@model Sehin_versión2._0.Models.Accidentes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accidentes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consecuencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consecuencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puestos.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puestos.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trabajadores.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trabajadores.Id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

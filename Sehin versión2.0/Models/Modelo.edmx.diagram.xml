@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad933f27d9594a22b74013d0ec463b36" Name="Diagram1" ZoomLevel="80" >
+        <EntityTypeShape EntityType="Modelo.Clientes" Width="1.5" PointX="2.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Modelo.Establecimientos" Width="1.5" PointX="4.375" PointY="3.25" />
+        <EntityTypeShape EntityType="Modelo.Contacto" Width="1.5" PointX="6.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Modelo.Presupuesto" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="Modelo.DetallePresupuesto" Width="1.5" PointX="9.625" PointY="0.5" />
+        <EntityTypeShape EntityType="Modelo.Técnicos" Width="1.5" PointX="0.5" PointY="5.5" />
+        <EntityTypeShape EntityType="Modelo.Agenda" Width="1.5" PointX="2.5" PointY="5.375" />
+        <EntityTypeShape EntityType="Modelo.Puestos" Width="1.5" PointX="6.375" PointY="5.875" />
+        <EntityTypeShape EntityType="Modelo.Trabajadores" Width="1.5" PointX="6.375" PointY="4.25" />
+        <EntityTypeShape EntityType="Modelo.Máquinas" Width="1.5" PointX="8.125" PointY="3.375" />
+        <EntityTypeShape EntityType="Modelo.Riesgos" Width="1.5" PointX="6.625" PointY="7.75" />
+        <EntityTypeShape EntityType="Modelo.TipoRiesgos" Width="1.5" PointX="6.625" PointY="10.125" />
+        <EntityTypeShape EntityType="Modelo.Accidentes" Width="1.5" PointX="8" PointY="1.875" />
+        <EntityTypeShape EntityType="Modelo.DetalleAccidentes" Width="1.5" PointX="9.625" PointY="1.875" />
+        <EntityTypeShape EntityType="Modelo.MedidasPreventivas" Width="1.5" PointX="4.75" PointY="9.625" />
+        <EntityTypeShape EntityType="Modelo.OrdenTrabajo" Width="1.5" PointX="4.5" PointY="6.625" />
+        <EntityTypeShape EntityType="Modelo.PlanesFormacion" Width="1.5" PointX="2.625" PointY="10.5" />
+        <EntityTypeShape EntityType="Modelo.DetallePlanesFormacion" Width="1.5" PointX="0.5" PointY="10.5" />
+        <EntityTypeShape EntityType="Modelo.Cursos" Width="1.5" PointX="0.625" PointY="8.875" />
+        <EntityTypeShape EntityType="Modelo.CondicionIva" Width="1.5" PointX="4.25" PointY="0.5" />
+        <AssociationConnector Association="Modelo.ClientesCondicionIva" />
+        <EntityTypeShape EntityType="Modelo.Provincias" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Modelo.Localidades" Width="1.5" PointX="0.5" PointY="2.625" />
+        <AssociationConnector Association="Modelo.LocalidadesProvincias" />
+        <AssociationConnector Association="Modelo.ClientesLocalidades" />
+        <AssociationConnector Association="Modelo.EstablecimientosLocalidades" />
+        <EntityTypeShape EntityType="Modelo.ActividadesEconomicas" Width="1.5" PointX="2.375" PointY="3.625" />
+        <AssociationConnector Association="Modelo.EstablecimientosActividadesEconomicas" />
+        <AssociationConnector Association="Modelo.ContactoClientes" />
+        <AssociationConnector Association="Modelo.ContactoLocalidades" />
+        <AssociationConnector Association="Modelo.TécnicosLocalidades" />
+        <AssociationConnector Association="Modelo.AgendaTécnicos" />
+        <AssociationConnector Association="Modelo.AgendaEstablecimientos" />
+        <AssociationConnector Association="Modelo.AgendaTareasPuesto" />
+        <AssociationConnector Association="Modelo.TareasPuestoPuestos" />
+        <AssociationConnector Association="Modelo.TareasPuestoTrabajadores" />
+        <AssociationConnector Association="Modelo.TareasPuestoRiesgos" />
+        <EntityTypeShape EntityType="Modelo.Tareas" Width="1.5" PointX="2.5" PointY="7.75" />
+        <AssociationConnector Association="Modelo.TareasXPuestoXTrabajadorTareas" />
+        <AssociationConnector Association="Modelo.TareasXPuestoXTrabajadorMáquinas" />
+        <AssociationConnector Association="Modelo.RiesgosTipoRiesgos" />
+        <AssociationConnector Association="Modelo.TareasXPuestoXTrabajadorMedidasPreventivas" />
+        <AssociationConnector Association="Modelo.EstablecimientosClientes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloStoreContainer">
+    <EntitySet Name="ClientesSet" EntityType="Modelo.Store.ClientesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EstablecimientosSet" EntityType="Modelo.Store.EstablecimientosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactoSet" EntityType="Modelo.Store.ContactoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PresupuestoSet" EntityType="Modelo.Store.PresupuestoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetallePresupuestoSet" EntityType="Modelo.Store.DetallePresupuestoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TécnicosSet" EntityType="Modelo.Store.TécnicosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AgendaSet" EntityType="Modelo.Store.AgendaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PuestosSet" EntityType="Modelo.Store.PuestosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TrabajadoresSet" EntityType="Modelo.Store.TrabajadoresSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MáquinasSet" EntityType="Modelo.Store.MáquinasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RiesgosSet" EntityType="Modelo.Store.RiesgosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoRiesgosSet" EntityType="Modelo.Store.TipoRiesgosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccidentesSet" EntityType="Modelo.Store.AccidentesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MedidasPreventivasSet" EntityType="Modelo.Store.MedidasPreventivasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrdenTrabajoSet" EntityType="Modelo.Store.OrdenTrabajoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PlanesFormacionSet" EntityType="Modelo.Store.PlanesFormacionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetallePlanesFormacionSet" EntityType="Modelo.Store.DetallePlanesFormacionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CursosSet" EntityType="Modelo.Store.CursosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CondicionIvaSet" EntityType="Modelo.Store.CondicionIvaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProvinciasSet" EntityType="Modelo.Store.ProvinciasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocalidadesSet" EntityType="Modelo.Store.LocalidadesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActividadesEconomicasSet" EntityType="Modelo.Store.ActividadesEconomicasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TareasSet" EntityType="Modelo.Store.TareasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServicioSet" EntityType="Modelo.Store.ServicioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClasePruebaSet" EntityType="Modelo.Store.ClasePruebaSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EstablecimientosClientes" Association="Modelo.Store.EstablecimientosClientes">
+      <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+      <End Role="Clientes" EntitySet="ClientesSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientesCondicionIva" Association="Modelo.Store.ClientesCondicionIva">
+      <End Role="Clientes" EntitySet="ClientesSet" />
+      <End Role="CondicionIva" EntitySet="CondicionIvaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientesLocalidades" Association="Modelo.Store.ClientesLocalidades">
+      <End Role="Clientes" EntitySet="ClientesSet" />
+      <End Role="Localidades" EntitySet="LocalidadesSet" />
+    </AssociationSet>
+    <AssociationSet Name="ContactoLocalidades" Association="Modelo.Store.ContactoLocalidades">
+      <End Role="Contacto" EntitySet="ContactoSet" />
+      <End Role="Localidades" EntitySet="LocalidadesSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocalidadesProvincias" Association="Modelo.Store.LocalidadesProvincias">
+      <End Role="Localidades" EntitySet="LocalidadesSet" />
+      <End Role="Provincias" EntitySet="ProvinciasSet" />
+    </AssociationSet>
+    <AssociationSet Name="EstablecimientosLocalidades" Association="Modelo.Store.EstablecimientosLocalidades">
+      <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+      <End Role="Localidades" EntitySet="LocalidadesSet" />
+    </AssociationSet>
+    <AssociationSet Name="EstablecimientosActividadesEconomicas" Association="Modelo.Store.EstablecimientosActividadesEconomicas">
+      <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+      <End Role="ActividadesEconomicas" EntitySet="ActividadesEconomicasSet" />
+    </AssociationSet>
+    <AssociationSet Name="TécnicosLocalidades" Association="Modelo.Store.TécnicosLocalidades">
+      <End Role="Técnicos" EntitySet="TécnicosSet" />
+      <End Role="Localidades" EntitySet="LocalidadesSet" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajoPuestos" Association="Modelo.Store.OrdenTrabajoPuestos">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+      <End Role="Puestos" EntitySet="PuestosSet" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajoTrabajadores" Association="Modelo.Store.OrdenTrabajoTrabajadores">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+      <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajoMáquinas" Association="Modelo.Store.OrdenTrabajoMáquinas">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+      <End Role="Máquinas" EntitySet="MáquinasSet" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajoRiesgos" Association="Modelo.Store.OrdenTrabajoRiesgos">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+      <End Role="Riesgos" EntitySet="RiesgosSet" />
+    </AssociationSet>
+    <AssociationSet Name="RiesgosTipoRiesgos" Association="Modelo.Store.RiesgosTipoRiesgos">
+      <End Role="Riesgos" EntitySet="RiesgosSet" />
+      <End Role="TipoRiesgos" EntitySet="TipoRiesgosSet" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajoMedidasPreventivas" Association="Modelo.Store.OrdenTrabajoMedidasPreventivas">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+      <End Role="MedidasPreventivas" EntitySet="MedidasPreventivasSet" />
+    </AssociationSet>
+    <AssociationSet Name="TareasOrdenTrabajo" Association="Modelo.Store.TareasOrdenTrabajo">
+      <End Role="Tareas" EntitySet="TareasSet" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+    </AssociationSet>
+    <AssociationSet Name="AgendaTécnicos" Association="Modelo.Store.AgendaTécnicos">
+      <End Role="Agenda" EntitySet="AgendaSet" />
+      <End Role="Técnicos" EntitySet="TécnicosSet" />
+    </AssociationSet>
+    <AssociationSet Name="AgendaOrdenTrabajo" Association="Modelo.Store.AgendaOrdenTrabajo">
+      <End Role="Agenda" EntitySet="AgendaSet" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+    </AssociationSet>
+    <AssociationSet Name="AgendaEstablecimientos" Association="Modelo.Store.AgendaEstablecimientos">
+      <End Role="Agenda" EntitySet="AgendaSet" />
+      <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+    </AssociationSet>
+    <AssociationSet Name="PresupuestoClientes" Association="Modelo.Store.PresupuestoClientes">
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+      <End Role="Clientes" EntitySet="ClientesSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccidentesPuestos" Association="Modelo.Store.AccidentesPuestos">
+      <End Role="Accidentes" EntitySet="AccidentesSet" />
+      <End Role="Puestos" EntitySet="PuestosSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccidentesTrabajadores" Association="Modelo.Store.AccidentesTrabajadores">
+      <End Role="Accidentes" EntitySet="AccidentesSet" />
+      <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="PlanesFormacionCursos" Association="Modelo.Store.PlanesFormacionCursos">
+      <End Role="PlanesFormacion" EntitySet="PlanesFormacionSet" />
+      <End Role="Cursos" EntitySet="CursosSet" />
+    </AssociationSet>
+    <AssociationSet Name="PlanesFormacionTrabajadores" Association="Modelo.Store.PlanesFormacionTrabajadores">
+      <End Role="PlanesFormacion" EntitySet="PlanesFormacionSet" />
+      <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+    </AssociationSet>
+    <AssociationSet Name="DetallePresupuestoServicio" Association="Modelo.Store.DetallePresupuestoServicio">
+      <End Role="DetallePresupuesto" EntitySet="DetallePresupuestoSet" />
+      <End Role="Servicio" EntitySet="ServicioSet" />
+    </AssociationSet>
+    <AssociationSet Name="PresupuestoDetallePresupuesto" Association="Modelo.Store.PresupuestoDetallePresupuesto">
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+      <End Role="DetallePresupuesto" EntitySet="DetallePresupuestoSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientesContacto" Association="Modelo.Store.ClientesContacto">
+      <End Role="Clientes" EntitySet="ClientesSet" />
+      <End Role="Contacto" EntitySet="ContactoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClientesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RazonSocial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CUIT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IngBrutos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CondicionIvaId" Type="int" Nullable="false" />
+    <Property Name="LocalidadesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstablecimientosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantTrabajadores" Type="smallint" Nullable="false" />
+    <Property Name="Superficie" Type="float" Nullable="false" />
+    <Property Name="ART" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClientesId" Type="int" Nullable="false" />
+    <Property Name="LocalidadesId" Type="int" Nullable="false" />
+    <Property Name="ActividadesEconomicasId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoDoc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumeroDoc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocalidadesId" Type="int" Nullable="false" />
+    <Property Name="ClientesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PresupuestoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientesId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="fechavencimiento" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetallePresupuestoSet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Monto" Type="float" Nullable="false" />
+    <Property Name="ServicioId" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="preciounitario" Type="float" Nullable="false" />
+    <Property Name="descuento" Type="float" Nullable="false" />
+    <Property Name="PresupuestoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TécnicosSet">
+    <Key>
+      <PropertyRef Name="Legajo" />
+    </Key>
+    <Property Name="Legajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoDoc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumeroDoc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LocalidadesId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgendaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TécnicosLegajo" Type="int" Nullable="false" />
+    <Property Name="OrdenTrabajoId" Type="int" Nullable="false" />
+    <Property Name="EstablecimientosId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PuestosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TareasPuestoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TrabajadoresSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MáquinasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RiesgosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Factor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CondicionTrabajo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoRiesgosId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoRiesgosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccidentesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PuestosId" Type="int" Nullable="false" />
+    <Property Name="TrabajadoresId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Consecuencia" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedidasPreventivasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenTrabajoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PuestosId" Type="int" Nullable="false" />
+    <Property Name="TrabajadoresId" Type="int" Nullable="false" />
+    <Property Name="MáquinasId" Type="int" Nullable="false" />
+    <Property Name="RiesgosId" Type="int" Nullable="false" />
+    <Property Name="MedidasPreventivasId" Type="int" Nullable="false" />
+    <Property Name="TareasId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlanesFormacionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CursosId" Type="int" Nullable="false" />
+    <Property Name="TrabajadoresId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetallePlanesFormacionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CondicionIvaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PorcentajeIva" Type="float" Nullable="false" />
+    <Property Name="DiscriminaIva" Type="bit" Nullable="false" />
+    <Property Name="LetraFiscal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProvinciasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocalidadesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProvinciasId" Type="int" Nullable="false" />
+    <Property Name="CodigoPostal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActividadesEconomicasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TareasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Categoria" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServicioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="precio" Type="float" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClasePruebaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="EstablecimientosClientes">
+    <End Role="Establecimientos" Type="Modelo.Store.EstablecimientosSet" Multiplicity="*" />
+    <End Role="Clientes" Type="Modelo.Store.ClientesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Establecimientos">
+        <PropertyRef Name="ClientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientesCondicionIva">
+    <End Role="Clientes" Type="Modelo.Store.ClientesSet" Multiplicity="*" />
+    <End Role="CondicionIva" Type="Modelo.Store.CondicionIvaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CondicionIva">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="CondicionIvaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientesLocalidades">
+    <End Role="Clientes" Type="Modelo.Store.ClientesSet" Multiplicity="*" />
+    <End Role="Localidades" Type="Modelo.Store.LocalidadesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="LocalidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactoLocalidades">
+    <End Role="Contacto" Type="Modelo.Store.ContactoSet" Multiplicity="*" />
+    <End Role="Localidades" Type="Modelo.Store.LocalidadesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="LocalidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalidadesProvincias">
+    <End Role="Localidades" Type="Modelo.Store.LocalidadesSet" Multiplicity="*" />
+    <End Role="Provincias" Type="Modelo.Store.ProvinciasSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Provincias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidades">
+        <PropertyRef Name="ProvinciasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EstablecimientosLocalidades">
+    <End Role="Establecimientos" Type="Modelo.Store.EstablecimientosSet" Multiplicity="*" />
+    <End Role="Localidades" Type="Modelo.Store.LocalidadesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Establecimientos">
+        <PropertyRef Name="LocalidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EstablecimientosActividadesEconomicas">
+    <End Role="Establecimientos" Type="Modelo.Store.EstablecimientosSet" Multiplicity="*" />
+    <End Role="ActividadesEconomicas" Type="Modelo.Store.ActividadesEconomicasSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ActividadesEconomicas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Establecimientos">
+        <PropertyRef Name="ActividadesEconomicasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TécnicosLocalidades">
+    <End Role="Técnicos" Type="Modelo.Store.TécnicosSet" Multiplicity="*" />
+    <End Role="Localidades" Type="Modelo.Store.LocalidadesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Técnicos">
+        <PropertyRef Name="LocalidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajoPuestos">
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <End Role="Puestos" Type="Modelo.Store.PuestosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Puestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="PuestosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajoTrabajadores">
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <End Role="Trabajadores" Type="Modelo.Store.TrabajadoresSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="TrabajadoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajoMáquinas">
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <End Role="Máquinas" Type="Modelo.Store.MáquinasSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Máquinas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="MáquinasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajoRiesgos">
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <End Role="Riesgos" Type="Modelo.Store.RiesgosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Riesgos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="RiesgosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RiesgosTipoRiesgos">
+    <End Role="Riesgos" Type="Modelo.Store.RiesgosSet" Multiplicity="*" />
+    <End Role="TipoRiesgos" Type="Modelo.Store.TipoRiesgosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="TipoRiesgos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Riesgos">
+        <PropertyRef Name="TipoRiesgosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajoMedidasPreventivas">
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <End Role="MedidasPreventivas" Type="Modelo.Store.MedidasPreventivasSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="MedidasPreventivas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="MedidasPreventivasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TareasOrdenTrabajo">
+    <End Role="Tareas" Type="Modelo.Store.TareasSet" Multiplicity="1" />
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tareas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="TareasId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AgendaTécnicos">
+    <End Role="Agenda" Type="Modelo.Store.AgendaSet" Multiplicity="*" />
+    <End Role="Técnicos" Type="Modelo.Store.TécnicosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Técnicos">
+        <PropertyRef Name="Legajo" />
+      </Principal>
+      <Dependent Role="Agenda">
+        <PropertyRef Name="TécnicosLegajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AgendaOrdenTrabajo">
+    <End Role="Agenda" Type="Modelo.Store.AgendaSet" Multiplicity="*" />
+    <End Role="OrdenTrabajo" Type="Modelo.Store.OrdenTrabajoSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenTrabajo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Agenda">
+        <PropertyRef Name="OrdenTrabajoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AgendaEstablecimientos">
+    <End Role="Agenda" Type="Modelo.Store.AgendaSet" Multiplicity="*" />
+    <End Role="Establecimientos" Type="Modelo.Store.EstablecimientosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Establecimientos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Agenda">
+        <PropertyRef Name="EstablecimientosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PresupuestoClientes">
+    <End Role="Presupuesto" Type="Modelo.Store.PresupuestoSet" Multiplicity="*" />
+    <End Role="Clientes" Type="Modelo.Store.ClientesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Presupuesto">
+        <PropertyRef Name="ClientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccidentesPuestos">
+    <End Role="Accidentes" Type="Modelo.Store.AccidentesSet" Multiplicity="*" />
+    <End Role="Puestos" Type="Modelo.Store.PuestosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Puestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Accidentes">
+        <PropertyRef Name="PuestosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccidentesTrabajadores">
+    <End Role="Accidentes" Type="Modelo.Store.AccidentesSet" Multiplicity="*" />
+    <End Role="Trabajadores" Type="Modelo.Store.TrabajadoresSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Accidentes">
+        <PropertyRef Name="TrabajadoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlanesFormacionCursos">
+    <End Role="PlanesFormacion" Type="Modelo.Store.PlanesFormacionSet" Multiplicity="*" />
+    <End Role="Cursos" Type="Modelo.Store.CursosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cursos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlanesFormacion">
+        <PropertyRef Name="CursosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PlanesFormacionTrabajadores">
+    <End Role="PlanesFormacion" Type="Modelo.Store.PlanesFormacionSet" Multiplicity="*" />
+    <End Role="Trabajadores" Type="Modelo.Store.TrabajadoresSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlanesFormacion">
+        <PropertyRef Name="TrabajadoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DetallePresupuestoServicio">
+    <End Role="DetallePresupuesto" Type="Modelo.Store.DetallePresupuestoSet" Multiplicity="*" />
+    <End Role="Servicio" Type="Modelo.Store.ServicioSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetallePresupuesto">
+        <PropertyRef Name="ServicioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PresupuestoDetallePresupuesto">
+    <End Role="Presupuesto" Type="Modelo.Store.PresupuestoSet" Multiplicity="1" />
+    <End Role="DetallePresupuesto" Type="Modelo.Store.DetallePresupuestoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presupuesto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetallePresupuesto">
+        <PropertyRef Name="PresupuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientesContacto">
+    <End Role="Clientes" Type="Modelo.Store.ClientesSet" Multiplicity="1" />
+    <End Role="Contacto" Type="Modelo.Store.ContactoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="ClientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModeloContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientesSet" EntityType="Modelo.Clientes" />
+          <EntitySet Name="EstablecimientosSet" EntityType="Modelo.Establecimientos" />
+          <EntitySet Name="ContactoSet" EntityType="Modelo.Contacto" />
+          <EntitySet Name="PresupuestoSet" EntityType="Modelo.Presupuesto" />
+          <EntitySet Name="DetallePresupuestoSet" EntityType="Modelo.DetallePresupuesto" />
+          <EntitySet Name="TécnicosSet" EntityType="Modelo.Técnicos" />
+          <EntitySet Name="AgendaSet" EntityType="Modelo.Agenda" />
+          <EntitySet Name="PuestosSet" EntityType="Modelo.Puestos" />
+          <EntitySet Name="TrabajadoresSet" EntityType="Modelo.Trabajadores" />
+          <EntitySet Name="MáquinasSet" EntityType="Modelo.Máquinas" />
+          <EntitySet Name="RiesgosSet" EntityType="Modelo.Riesgos" />
+          <EntitySet Name="TipoRiesgosSet" EntityType="Modelo.TipoRiesgos" />
+          <EntitySet Name="AccidentesSet" EntityType="Modelo.Accidentes" />
+          <EntitySet Name="MedidasPreventivasSet" EntityType="Modelo.MedidasPreventivas" />
+          <EntitySet Name="OrdenTrabajoSet" EntityType="Modelo.OrdenTrabajo" />
+          <EntitySet Name="PlanesFormacionSet" EntityType="Modelo.PlanesFormacion" />
+          <EntitySet Name="DetallePlanesFormacionSet" EntityType="Modelo.DetallePlanesFormacion" />
+          <EntitySet Name="CursosSet" EntityType="Modelo.Cursos" />
+          <EntitySet Name="CondicionIvaSet" EntityType="Modelo.CondicionIva" />
+          <EntitySet Name="ProvinciasSet" EntityType="Modelo.Provincias" />
+          <EntitySet Name="LocalidadesSet" EntityType="Modelo.Localidades" />
+          <EntitySet Name="ActividadesEconomicasSet" EntityType="Modelo.ActividadesEconomicas" />
+          <EntitySet Name="TareasSet" EntityType="Modelo.Tareas" />
+          <AssociationSet Name="EstablecimientosClientes" Association="Modelo.EstablecimientosClientes">
+            <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+            <End Role="Clientes" EntitySet="ClientesSet" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesCondicionIva" Association="Modelo.ClientesCondicionIva">
+            <End Role="Clientes" EntitySet="ClientesSet" />
+            <End Role="CondicionIva" EntitySet="CondicionIvaSet" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesLocalidades" Association="Modelo.ClientesLocalidades">
+            <End Role="Clientes" EntitySet="ClientesSet" />
+            <End Role="Localidades" EntitySet="LocalidadesSet" />
+          </AssociationSet>
+          <AssociationSet Name="ContactoLocalidades" Association="Modelo.ContactoLocalidades">
+            <End Role="Contacto" EntitySet="ContactoSet" />
+            <End Role="Localidades" EntitySet="LocalidadesSet" />
+          </AssociationSet>
+          <AssociationSet Name="LocalidadesProvincias" Association="Modelo.LocalidadesProvincias">
+            <End Role="Localidades" EntitySet="LocalidadesSet" />
+            <End Role="Provincias" EntitySet="ProvinciasSet" />
+          </AssociationSet>
+          <AssociationSet Name="EstablecimientosLocalidades" Association="Modelo.EstablecimientosLocalidades">
+            <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+            <End Role="Localidades" EntitySet="LocalidadesSet" />
+          </AssociationSet>
+          <AssociationSet Name="EstablecimientosActividadesEconomicas" Association="Modelo.EstablecimientosActividadesEconomicas">
+            <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+            <End Role="ActividadesEconomicas" EntitySet="ActividadesEconomicasSet" />
+          </AssociationSet>
+          <AssociationSet Name="TécnicosLocalidades" Association="Modelo.TécnicosLocalidades">
+            <End Role="Técnicos" EntitySet="TécnicosSet" />
+            <End Role="Localidades" EntitySet="LocalidadesSet" />
+          </AssociationSet>
+          <AssociationSet Name="OrdenTrabajoPuestos" Association="Modelo.OrdenTrabajoPuestos">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+            <End Role="Puestos" EntitySet="PuestosSet" />
+          </AssociationSet>
+          <AssociationSet Name="OrdenTrabajoTrabajadores" Association="Modelo.OrdenTrabajoTrabajadores">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+            <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+          </AssociationSet>
+          <AssociationSet Name="OrdenTrabajoMáquinas" Association="Modelo.OrdenTrabajoMáquinas">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+            <End Role="Máquinas" EntitySet="MáquinasSet" />
+          </AssociationSet>
+          <AssociationSet Name="OrdenTrabajoRiesgos" Association="Modelo.OrdenTrabajoRiesgos">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+            <End Role="Riesgos" EntitySet="RiesgosSet" />
+          </AssociationSet>
+          <AssociationSet Name="RiesgosTipoRiesgos" Association="Modelo.RiesgosTipoRiesgos">
+            <End Role="Riesgos" EntitySet="RiesgosSet" />
+            <End Role="TipoRiesgos" EntitySet="TipoRiesgosSet" />
+          </AssociationSet>
+          <AssociationSet Name="OrdenTrabajoMedidasPreventivas" Association="Modelo.OrdenTrabajoMedidasPreventivas">
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+            <End Role="MedidasPreventivas" EntitySet="MedidasPreventivasSet" />
+          </AssociationSet>
+          <AssociationSet Name="TareasOrdenTrabajo" Association="Modelo.TareasOrdenTrabajo">
+            <End Role="Tareas" EntitySet="TareasSet" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+          </AssociationSet>
+          <AssociationSet Name="AgendaTécnicos" Association="Modelo.AgendaTécnicos">
+            <End Role="Agenda" EntitySet="AgendaSet" />
+            <End Role="Técnicos" EntitySet="TécnicosSet" />
+          </AssociationSet>
+          <AssociationSet Name="AgendaOrdenTrabajo" Association="Modelo.AgendaOrdenTrabajo">
+            <End Role="Agenda" EntitySet="AgendaSet" />
+            <End Role="OrdenTrabajo" EntitySet="OrdenTrabajoSet" />
+          </AssociationSet>
+          <AssociationSet Name="AgendaEstablecimientos" Association="Modelo.AgendaEstablecimientos">
+            <End Role="Agenda" EntitySet="AgendaSet" />
+            <End Role="Establecimientos" EntitySet="EstablecimientosSet" />
+          </AssociationSet>
+          <AssociationSet Name="PresupuestoClientes" Association="Modelo.PresupuestoClientes">
+            <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+            <End Role="Clientes" EntitySet="ClientesSet" />
+          </AssociationSet>
+          <AssociationSet Name="AccidentesPuestos" Association="Modelo.AccidentesPuestos">
+            <End Role="Accidentes" EntitySet="AccidentesSet" />
+            <End Role="Puestos" EntitySet="PuestosSet" />
+          </AssociationSet>
+          <AssociationSet Name="AccidentesTrabajadores" Association="Modelo.AccidentesTrabajadores">
+            <End Role="Accidentes" EntitySet="AccidentesSet" />
+            <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+          </AssociationSet>
+          <AssociationSet Name="PlanesFormacionCursos" Association="Modelo.PlanesFormacionCursos">
+            <End Role="PlanesFormacion" EntitySet="PlanesFormacionSet" />
+            <End Role="Cursos" EntitySet="CursosSet" />
+          </AssociationSet>
+          <AssociationSet Name="PlanesFormacionTrabajadores" Association="Modelo.PlanesFormacionTrabajadores">
+            <End Role="PlanesFormacion" EntitySet="PlanesFormacionSet" />
+            <End Role="Trabajadores" EntitySet="TrabajadoresSet" />
+          </AssociationSet>
+          <EntitySet Name="ServicioSet" EntityType="Modelo.Servicio" />
+          <AssociationSet Name="DetallePresupuestoServicio" Association="Modelo.DetallePresupuestoServicio">
+            <End Role="DetallePresupuesto" EntitySet="DetallePresupuestoSet" />
+            <End Role="Servicio" EntitySet="ServicioSet" />
+          </AssociationSet>
+          <AssociationSet Name="PresupuestoDetallePresupuesto" Association="Modelo.PresupuestoDetallePresupuesto">
+            <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+            <End Role="DetallePresupuesto" EntitySet="DetallePresupuestoSet" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesContacto" Association="Modelo.ClientesContacto">
+            <End Role="Clientes" EntitySet="ClientesSet" />
+            <End Role="Contacto" EntitySet="ContactoSet" />
+          </AssociationSet>
+          <EntitySet Name="ClasePruebaSet" EntityType="Modelo.ClasePrueba" />
+        </EntityContainer>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" />
+          <Property Name="CUIT" Type="String" Nullable="false" />
+          <Property Name="IngBrutos" Type="String" Nullable="false" />
+          <NavigationProperty Name="Establecimientos" Relationship="Modelo.EstablecimientosClientes" FromRole="Clientes" ToRole="Establecimientos" />
+          <NavigationProperty Name="CondicionIva" Relationship="Modelo.ClientesCondicionIva" FromRole="Clientes" ToRole="CondicionIva" />
+          <Property Name="CondicionIvaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Modelo.ClientesLocalidades" FromRole="Clientes" ToRole="Localidades" />
+          <Property Name="LocalidadesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Presupuesto" Relationship="Modelo.PresupuestoClientes" FromRole="Clientes" ToRole="Presupuesto" />
+          <NavigationProperty Name="Contacto" Relationship="Modelo.ClientesContacto" FromRole="Clientes" ToRole="Contacto" />
+          </EntityType>
+        <EntityType Name="Establecimientos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="CantTrabajadores" Type="Int16" Nullable="false" />
+          <Property Name="Superficie" Type="Double" Nullable="false" />
+          <Property Name="ART" Type="String" Nullable="false" />
+          <Property Name="Domicilio" Type="String" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Modelo.EstablecimientosClientes" FromRole="Establecimientos" ToRole="Clientes" />
+          <Property Name="ClientesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Modelo.EstablecimientosLocalidades" FromRole="Establecimientos" ToRole="Localidades" />
+          <Property Name="LocalidadesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActividadesEconomicas" Relationship="Modelo.EstablecimientosActividadesEconomicas" FromRole="Establecimientos" ToRole="ActividadesEconomicas" />
+          <Property Name="ActividadesEconomicasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agenda" Relationship="Modelo.AgendaEstablecimientos" FromRole="Establecimientos" ToRole="Agenda" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="TipoDoc" Type="String" Nullable="false" />
+          <Property Name="NumeroDoc" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" />
+          <Property Name="Domicilio" Type="String" Nullable="false" />
+          <Property Name="Foto" Type="String" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Modelo.ContactoLocalidades" FromRole="Contacto" ToRole="Localidades" />
+          <Property Name="LocalidadesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Modelo.ClientesContacto" FromRole="Contacto" ToRole="Clientes" />
+          <Property Name="ClientesId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Presupuesto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Clientes" Relationship="Modelo.PresupuestoClientes" FromRole="Presupuesto" ToRole="Clientes" />
+          <Property Name="ClientesId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="fechavencimiento" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="DetallePresupuesto" Relationship="Modelo.PresupuestoDetallePresupuesto" FromRole="Presupuesto" ToRole="DetallePresupuesto" />
+        </EntityType>
+        <EntityType Name="DetallePresupuesto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Monto" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Servicio" Relationship="Modelo.DetallePresupuestoServicio" FromRole="DetallePresupuesto" ToRole="Servicio" />
+          <Property Name="ServicioId" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <Property Name="cantidad" Type="Double" Nullable="false" />
+          <Property Name="preciounitario" Type="Double" Nullable="false" />
+          <Property Name="descuento" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Presupuesto" Relationship="Modelo.PresupuestoDetallePresupuesto" FromRole="DetallePresupuesto" ToRole="Presupuesto" />
+          <Property Name="PresupuestoId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Técnicos">
+          <Key>
+            <PropertyRef Name="Legajo" />
+          </Key>
+          <Property Name="Legajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="TipoDoc" Type="String" Nullable="false" />
+          <Property Name="NumeroDoc" Type="String" Nullable="false" />
+          <Property Name="Domicilio" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Telefono" Type="String" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Modelo.TécnicosLocalidades" FromRole="Técnicos" ToRole="Localidades" />
+          <Property Name="LocalidadesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agenda" Relationship="Modelo.AgendaTécnicos" FromRole="Técnicos" ToRole="Agenda" />
+        </EntityType>
+        <EntityType Name="Agenda">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="String" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" />
+          <NavigationProperty Name="Técnicos" Relationship="Modelo.AgendaTécnicos" FromRole="Agenda" ToRole="Técnicos" />
+          <Property Name="TécnicosLegajo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.AgendaOrdenTrabajo" FromRole="Agenda" ToRole="OrdenTrabajo" />
+          <Property Name="OrdenTrabajoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Establecimientos" Relationship="Modelo.AgendaEstablecimientos" FromRole="Agenda" ToRole="Establecimientos" />
+          <Property Name="EstablecimientosId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puestos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TareasPuestoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.OrdenTrabajoPuestos" FromRole="Puestos" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="Accidentes" Relationship="Modelo.AccidentesPuestos" FromRole="Puestos" ToRole="Accidentes" />
+        </EntityType>
+        <EntityType Name="Trabajadores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.OrdenTrabajoTrabajadores" FromRole="Trabajadores" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="Accidentes" Relationship="Modelo.AccidentesTrabajadores" FromRole="Trabajadores" ToRole="Accidentes" />
+          <NavigationProperty Name="PlanesFormacion" Relationship="Modelo.PlanesFormacionTrabajadores" FromRole="Trabajadores" ToRole="PlanesFormacion" />
+        </EntityType>
+        <EntityType Name="Máquinas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.OrdenTrabajoMáquinas" FromRole="Máquinas" ToRole="OrdenTrabajo" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Riesgos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Factor" Type="String" Nullable="false" />
+          <Property Name="CondicionTrabajo" Type="String" Nullable="false" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.OrdenTrabajoRiesgos" FromRole="Riesgos" ToRole="OrdenTrabajo" />
+          <NavigationProperty Name="TipoRiesgos" Relationship="Modelo.RiesgosTipoRiesgos" FromRole="Riesgos" ToRole="TipoRiesgos" />
+          <Property Name="TipoRiesgosId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoRiesgos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Riesgos" Relationship="Modelo.RiesgosTipoRiesgos" FromRole="TipoRiesgos" ToRole="Riesgos" />
+        </EntityType>
+        <EntityType Name="Accidentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Puestos" Relationship="Modelo.AccidentesPuestos" FromRole="Accidentes" ToRole="Puestos" />
+          <Property Name="PuestosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Modelo.AccidentesTrabajadores" FromRole="Accidentes" ToRole="Trabajadores" />
+          <Property Name="TrabajadoresId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" />
+          <Property Name="Consecuencia" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedidasPreventivas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.OrdenTrabajoMedidasPreventivas" FromRole="MedidasPreventivas" ToRole="OrdenTrabajo" />
+        </EntityType>
+        <EntityType Name="OrdenTrabajo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Puestos" Relationship="Modelo.OrdenTrabajoPuestos" FromRole="OrdenTrabajo" ToRole="Puestos" />
+          <Property Name="PuestosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Modelo.OrdenTrabajoTrabajadores" FromRole="OrdenTrabajo" ToRole="Trabajadores" />
+          <Property Name="TrabajadoresId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Máquinas" Relationship="Modelo.OrdenTrabajoMáquinas" FromRole="OrdenTrabajo" ToRole="Máquinas" />
+          <Property Name="MáquinasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Riesgos" Relationship="Modelo.OrdenTrabajoRiesgos" FromRole="OrdenTrabajo" ToRole="Riesgos" />
+          <Property Name="RiesgosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MedidasPreventivas" Relationship="Modelo.OrdenTrabajoMedidasPreventivas" FromRole="OrdenTrabajo" ToRole="MedidasPreventivas" />
+          <Property Name="MedidasPreventivasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tareas" Relationship="Modelo.TareasOrdenTrabajo" FromRole="OrdenTrabajo" ToRole="Tareas" />
+          <Property Name="TareasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Agenda" Relationship="Modelo.AgendaOrdenTrabajo" FromRole="OrdenTrabajo" ToRole="Agenda" />
+        </EntityType>
+        <EntityType Name="PlanesFormacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cursos" Relationship="Modelo.PlanesFormacionCursos" FromRole="PlanesFormacion" ToRole="Cursos" />
+          <Property Name="CursosId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Modelo.PlanesFormacionTrabajadores" FromRole="PlanesFormacion" ToRole="Trabajadores" />
+          <Property Name="TrabajadoresId" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetallePlanesFormacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Cursos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="PlanesFormacion" Relationship="Modelo.PlanesFormacionCursos" FromRole="Cursos" ToRole="PlanesFormacion" />
+        </EntityType>
+        <EntityType Name="CondicionIva">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="PorcentajeIva" Type="Double" Nullable="false" />
+          <Property Name="DiscriminaIva" Type="Boolean" Nullable="false" />
+          <Property Name="LetraFiscal" Type="String" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Modelo.ClientesCondicionIva" FromRole="CondicionIva" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Modelo.LocalidadesProvincias" FromRole="Provincias" ToRole="Localidades" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Modelo.ClientesLocalidades" FromRole="Localidades" ToRole="Clientes" />
+          <NavigationProperty Name="Contacto" Relationship="Modelo.ContactoLocalidades" FromRole="Localidades" ToRole="Contacto" />
+          <NavigationProperty Name="Provincias" Relationship="Modelo.LocalidadesProvincias" FromRole="Localidades" ToRole="Provincias" />
+          <Property Name="ProvinciasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Establecimientos" Relationship="Modelo.EstablecimientosLocalidades" FromRole="Localidades" ToRole="Establecimientos" />
+          <NavigationProperty Name="Técnicos" Relationship="Modelo.TécnicosLocalidades" FromRole="Localidades" ToRole="Técnicos" />
+          <Property Name="CodigoPostal" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActividadesEconomicas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Establecimientos" Relationship="Modelo.EstablecimientosActividadesEconomicas" FromRole="ActividadesEconomicas" ToRole="Establecimientos" />
+        </EntityType>
+        <EntityType Name="Tareas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Categoria" Type="String" Nullable="false" />
+          <NavigationProperty Name="OrdenTrabajo" Relationship="Modelo.TareasOrdenTrabajo" FromRole="Tareas" ToRole="OrdenTrabajo" />
+        </EntityType>
+        <Association Name="EstablecimientosClientes">
+          <End Type="Modelo.Establecimientos" Role="Establecimientos" Multiplicity="*" />
+          <End Type="Modelo.Clientes" Role="Clientes" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Establecimientos">
+              <PropertyRef Name="ClientesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesCondicionIva">
+          <End Type="Modelo.Clientes" Role="Clientes" Multiplicity="*" />
+          <End Type="Modelo.CondicionIva" Role="CondicionIva" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionIva">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="CondicionIvaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesLocalidades">
+          <End Type="Modelo.Clientes" Role="Clientes" Multiplicity="*" />
+          <End Type="Modelo.Localidades" Role="Localidades" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="LocalidadesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContactoLocalidades">
+          <End Type="Modelo.Contacto" Role="Contacto" Multiplicity="*" />
+          <End Type="Modelo.Localidades" Role="Localidades" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="LocalidadesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LocalidadesProvincias">
+          <End Type="Modelo.Localidades" Role="Localidades" Multiplicity="*" />
+          <End Type="Modelo.Provincias" Role="Provincias" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="ProvinciasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstablecimientosLocalidades">
+          <End Type="Modelo.Establecimientos" Role="Establecimientos" Multiplicity="*" />
+          <End Type="Modelo.Localidades" Role="Localidades" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Establecimientos">
+              <PropertyRef Name="LocalidadesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstablecimientosActividadesEconomicas">
+          <End Type="Modelo.Establecimientos" Role="Establecimientos" Multiplicity="*" />
+          <End Type="Modelo.ActividadesEconomicas" Role="ActividadesEconomicas" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ActividadesEconomicas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Establecimientos">
+              <PropertyRef Name="ActividadesEconomicasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TécnicosLocalidades">
+          <End Type="Modelo.Técnicos" Role="Técnicos" Multiplicity="*" />
+          <End Type="Modelo.Localidades" Role="Localidades" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Técnicos">
+              <PropertyRef Name="LocalidadesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdenTrabajoPuestos">
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <End Type="Modelo.Puestos" Role="Puestos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Puestos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="PuestosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdenTrabajoTrabajadores">
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <End Type="Modelo.Trabajadores" Role="Trabajadores" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="TrabajadoresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdenTrabajoMáquinas">
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <End Type="Modelo.Máquinas" Role="Máquinas" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Máquinas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="MáquinasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdenTrabajoRiesgos">
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <End Type="Modelo.Riesgos" Role="Riesgos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Riesgos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="RiesgosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RiesgosTipoRiesgos">
+          <End Type="Modelo.Riesgos" Role="Riesgos" Multiplicity="*" />
+          <End Type="Modelo.TipoRiesgos" Role="TipoRiesgos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="TipoRiesgos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Riesgos">
+              <PropertyRef Name="TipoRiesgosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrdenTrabajoMedidasPreventivas">
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <End Type="Modelo.MedidasPreventivas" Role="MedidasPreventivas" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="MedidasPreventivas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="MedidasPreventivasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TareasOrdenTrabajo">
+          <End Type="Modelo.Tareas" Role="Tareas" Multiplicity="1" />
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tareas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdenTrabajo">
+              <PropertyRef Name="TareasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AgendaTécnicos">
+          <End Type="Modelo.Agenda" Role="Agenda" Multiplicity="*" />
+          <End Type="Modelo.Técnicos" Role="Técnicos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Técnicos">
+              <PropertyRef Name="Legajo" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="TécnicosLegajo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AgendaOrdenTrabajo">
+          <End Type="Modelo.Agenda" Role="Agenda" Multiplicity="*" />
+          <End Type="Modelo.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenTrabajo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="OrdenTrabajoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AgendaEstablecimientos">
+          <End Type="Modelo.Agenda" Role="Agenda" Multiplicity="*" />
+          <End Type="Modelo.Establecimientos" Role="Establecimientos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Establecimientos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Agenda">
+              <PropertyRef Name="EstablecimientosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PresupuestoClientes">
+          <End Type="Modelo.Presupuesto" Role="Presupuesto" Multiplicity="*" />
+          <End Type="Modelo.Clientes" Role="Clientes" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Presupuesto">
+              <PropertyRef Name="ClientesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccidentesPuestos">
+          <End Type="Modelo.Accidentes" Role="Accidentes" Multiplicity="*" />
+          <End Type="Modelo.Puestos" Role="Puestos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Puestos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accidentes">
+              <PropertyRef Name="PuestosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccidentesTrabajadores">
+          <End Type="Modelo.Accidentes" Role="Accidentes" Multiplicity="*" />
+          <End Type="Modelo.Trabajadores" Role="Trabajadores" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Accidentes">
+              <PropertyRef Name="TrabajadoresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanesFormacionCursos">
+          <End Type="Modelo.PlanesFormacion" Role="PlanesFormacion" Multiplicity="*" />
+          <End Type="Modelo.Cursos" Role="Cursos" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Cursos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlanesFormacion">
+              <PropertyRef Name="CursosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlanesFormacionTrabajadores">
+          <End Type="Modelo.PlanesFormacion" Role="PlanesFormacion" Multiplicity="*" />
+          <End Type="Modelo.Trabajadores" Role="Trabajadores" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlanesFormacion">
+              <PropertyRef Name="TrabajadoresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <Property Name="precio" Type="Double" Nullable="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="DetallePresupuesto" Relationship="Modelo.DetallePresupuestoServicio" FromRole="Servicio" ToRole="DetallePresupuesto" />
+        </EntityType>
+        <Association Name="DetallePresupuestoServicio">
+          <End Type="Modelo.DetallePresupuesto" Role="DetallePresupuesto" Multiplicity="*" />
+          <End Type="Modelo.Servicio" Role="Servicio" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Servicio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallePresupuesto">
+              <PropertyRef Name="ServicioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PresupuestoDetallePresupuesto">
+          <End Type="Modelo.Presupuesto" Role="Presupuesto" Multiplicity="1" />
+          <End Type="Modelo.DetallePresupuesto" Role="DetallePresupuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presupuesto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetallePresupuesto">
+              <PropertyRef Name="PresupuestoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientesContacto">
+          <End Type="Modelo.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="Modelo.Contacto" Role="Contacto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="ClientesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ClasePrueba">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="ModeloContainer">
+    <EntitySetMapping Name="ClientesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Clientes)">
+        <MappingFragment StoreEntitySet="ClientesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+          <ScalarProperty Name="IngBrutos" ColumnName="IngBrutos" />
+          <ScalarProperty Name="CondicionIvaId" ColumnName="CondicionIvaId" />
+          <ScalarProperty Name="LocalidadesId" ColumnName="LocalidadesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstablecimientosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Establecimientos)">
+        <MappingFragment StoreEntitySet="EstablecimientosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CantTrabajadores" ColumnName="CantTrabajadores" />
+          <ScalarProperty Name="Superficie" ColumnName="Superficie" />
+          <ScalarProperty Name="ART" ColumnName="ART" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="ClientesId" ColumnName="ClientesId" />
+          <ScalarProperty Name="LocalidadesId" ColumnName="LocalidadesId" />
+          <ScalarProperty Name="ActividadesEconomicasId" ColumnName="ActividadesEconomicasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Contacto)">
+        <MappingFragment StoreEntitySet="ContactoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+          <ScalarProperty Name="NumeroDoc" ColumnName="NumeroDoc" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="LocalidadesId" ColumnName="LocalidadesId" />
+          <ScalarProperty Name="ClientesId" ColumnName="ClientesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PresupuestoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Presupuesto)">
+        <MappingFragment StoreEntitySet="PresupuestoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientesId" ColumnName="ClientesId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="fechavencimiento" ColumnName="fechavencimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePresupuestoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.DetallePresupuesto)">
+        <MappingFragment StoreEntitySet="DetallePresupuestoSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="ServicioId" ColumnName="ServicioId" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="preciounitario" ColumnName="preciounitario" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="PresupuestoId" ColumnName="PresupuestoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TécnicosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Técnicos)">
+        <MappingFragment StoreEntitySet="TécnicosSet">
+          <ScalarProperty Name="Legajo" ColumnName="Legajo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+          <ScalarProperty Name="NumeroDoc" ColumnName="NumeroDoc" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="LocalidadesId" ColumnName="LocalidadesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgendaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Agenda)">
+        <MappingFragment StoreEntitySet="AgendaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="TécnicosLegajo" ColumnName="TécnicosLegajo" />
+          <ScalarProperty Name="OrdenTrabajoId" ColumnName="OrdenTrabajoId" />
+          <ScalarProperty Name="EstablecimientosId" ColumnName="EstablecimientosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuestosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Puestos)">
+        <MappingFragment StoreEntitySet="PuestosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TareasPuestoId" ColumnName="TareasPuestoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrabajadoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Trabajadores)">
+        <MappingFragment StoreEntitySet="TrabajadoresSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MáquinasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Máquinas)">
+        <MappingFragment StoreEntitySet="MáquinasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RiesgosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Riesgos)">
+        <MappingFragment StoreEntitySet="RiesgosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="CondicionTrabajo" ColumnName="CondicionTrabajo" />
+          <ScalarProperty Name="TipoRiesgosId" ColumnName="TipoRiesgosId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoRiesgosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.TipoRiesgos)">
+        <MappingFragment StoreEntitySet="TipoRiesgosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Accidentes)">
+        <MappingFragment StoreEntitySet="AccidentesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PuestosId" ColumnName="PuestosId" />
+          <ScalarProperty Name="TrabajadoresId" ColumnName="TrabajadoresId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Consecuencia" ColumnName="Consecuencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedidasPreventivasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.MedidasPreventivas)">
+        <MappingFragment StoreEntitySet="MedidasPreventivasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenTrabajoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.OrdenTrabajo)">
+        <MappingFragment StoreEntitySet="OrdenTrabajoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PuestosId" ColumnName="PuestosId" />
+          <ScalarProperty Name="TrabajadoresId" ColumnName="TrabajadoresId" />
+          <ScalarProperty Name="MáquinasId" ColumnName="MáquinasId" />
+          <ScalarProperty Name="RiesgosId" ColumnName="RiesgosId" />
+          <ScalarProperty Name="MedidasPreventivasId" ColumnName="MedidasPreventivasId" />
+          <ScalarProperty Name="TareasId" ColumnName="TareasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanesFormacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.PlanesFormacion)">
+        <MappingFragment StoreEntitySet="PlanesFormacionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CursosId" ColumnName="CursosId" />
+          <ScalarProperty Name="TrabajadoresId" ColumnName="TrabajadoresId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePlanesFormacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.DetallePlanesFormacion)">
+        <MappingFragment StoreEntitySet="DetallePlanesFormacionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CursosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Cursos)">
+        <MappingFragment StoreEntitySet="CursosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CondicionIvaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.CondicionIva)">
+        <MappingFragment StoreEntitySet="CondicionIvaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PorcentajeIva" ColumnName="PorcentajeIva" />
+          <ScalarProperty Name="DiscriminaIva" ColumnName="DiscriminaIva" />
+          <ScalarProperty Name="LetraFiscal" ColumnName="LetraFiscal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProvinciasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Provincias)">
+        <MappingFragment StoreEntitySet="ProvinciasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalidadesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Localidades)">
+        <MappingFragment StoreEntitySet="LocalidadesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProvinciasId" ColumnName="ProvinciasId" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActividadesEconomicasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.ActividadesEconomicas)">
+        <MappingFragment StoreEntitySet="ActividadesEconomicasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TareasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Tareas)">
+        <MappingFragment StoreEntitySet="TareasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Servicio)">
+        <MappingFragment StoreEntitySet="ServicioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClasePruebaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.ClasePrueba)">
+        <MappingFragment StoreEntitySet="ClasePruebaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09e2469d9d534f5eb330de62a0092dd6" Name="Diagram1">
+        <EntityTypeShape EntityType="Modelo.Clientes" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Establecimientos" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Contacto" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Presupuesto" Width="2" PointX="6.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.DetallePresupuesto" Width="1.5" PointX="9.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Técnicos" Width="1.5" PointX="4.625" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Agenda" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Puestos" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Trabajadores" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Máquinas" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Riesgos" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.TipoRiesgos" Width="1.5" PointX="7.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Accidentes" Width="1.5" PointX="7.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.MedidasPreventivas" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.OrdenTrabajo" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.PlanesFormacion" Width="1.5" PointX="10" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.DetallePlanesFormacion" Width="1.5" PointX="12.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Cursos" Width="1.5" PointX="10" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.CondicionIva" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Provincias" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Localidades" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.ActividadesEconomicas" Width="1.5" PointX="2.625" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo.Tareas" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <AssociationConnector Association="Modelo.EstablecimientosClientes" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo.ClientesCondicionIva" />
+        <AssociationConnector Association="Modelo.ClientesLocalidades" />
+        <AssociationConnector Association="Modelo.ContactoLocalidades" />
+        <AssociationConnector Association="Modelo.LocalidadesProvincias" />
+        <AssociationConnector Association="Modelo.EstablecimientosLocalidades" />
+        <AssociationConnector Association="Modelo.EstablecimientosActividadesEconomicas" />
+        <AssociationConnector Association="Modelo.TécnicosLocalidades" />
+        <AssociationConnector Association="Modelo.OrdenTrabajoPuestos" />
+        <AssociationConnector Association="Modelo.OrdenTrabajoTrabajadores" />
+        <AssociationConnector Association="Modelo.OrdenTrabajoMáquinas" />
+        <AssociationConnector Association="Modelo.OrdenTrabajoRiesgos" />
+        <AssociationConnector Association="Modelo.RiesgosTipoRiesgos" />
+        <AssociationConnector Association="Modelo.OrdenTrabajoMedidasPreventivas" />
+        <AssociationConnector Association="Modelo.TareasOrdenTrabajo" />
+        <AssociationConnector Association="Modelo.AgendaTécnicos" />
+        <AssociationConnector Association="Modelo.AgendaOrdenTrabajo" />
+        <AssociationConnector Association="Modelo.AgendaEstablecimientos" />
+        <AssociationConnector Association="Modelo.PresupuestoClientes" />
+        <AssociationConnector Association="Modelo.AccidentesPuestos" />
+        <AssociationConnector Association="Modelo.AccidentesTrabajadores" />
+        <AssociationConnector Association="Modelo.PlanesFormacionCursos" />
+        <AssociationConnector Association="Modelo.PlanesFormacionTrabajadores" />
+        <EntityTypeShape EntityType="Modelo.Servicio" Width="1.5" PointX="9.75" PointY="4.125" />
+        <AssociationConnector Association="Modelo.DetallePresupuestoServicio" />
+        <AssociationConnector Association="Modelo.PresupuestoDetallePresupuesto" />
+        <AssociationConnector Association="Modelo.ClientesContacto" />
+        <EntityTypeShape EntityType="Modelo.ClasePrueba" Width="1.5" PointX="1" PointY="2.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

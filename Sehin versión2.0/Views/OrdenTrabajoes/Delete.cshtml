@@ -1,0 +1,72 @@
+﻿@model Sehin_versión2._0.Models.OrdenTrabajo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OrdenTrabajo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Puestos.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puestos.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trabajadores.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trabajadores.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Máquinas.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Máquinas.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Riesgos.Factor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Riesgos.Factor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedidasPreventivas.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedidasPreventivas.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tareas.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tareas.Descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

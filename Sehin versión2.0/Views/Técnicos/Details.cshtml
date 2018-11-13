@@ -1,0 +1,74 @@
+﻿@model Sehin_versión2._0.Models.Técnicos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Técnicos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Localidades.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Localidades.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Legajo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
